@@ -73,7 +73,7 @@ Final/
 
 This notebook performs the core preprocessing and automated program-mapping steps.
 
-- Loads raw dissertation and master’s thesis metadata from Deep Blue
+- Loads raw dissertation and master’s thesis metadata
 - Cleans and normalizes degree names and discipline labels
 - Classifies records into **Doctoral** and **Master** degree types using rule-based patterns
 - Applies a hybrid program-mapping pipeline:
@@ -131,11 +131,11 @@ This notebook conducts the main analytical tasks and generates figures and table
   - TF-IDF–based topic modeling
   - LDA topic extraction by decade
   - Sentence-BERT–based semantic clustering of dissertation titles
-- Excludes 2025–2026 data in selected analyses to avoid bias from embargo-related incompleteness
+- Excludes 2025–2026 data in selected analyses, as metadata for these years is still being collected.
 
 **Outputs**
 - Figures and tables saved in `Analysis Figures/`
-- Results used in the final blog post and reporting
+- Results used in the final blog post
 
 
 ## Reproducibility
