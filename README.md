@@ -8,3 +8,7 @@ kmeans_bert_data: Rackham_dissertation_metadata_kmeans.csv (.xlsx), doctoral_pro
 kmeans_bert_data_mapping: Rackham_dissertation_metadata_kmeans_mapping.csv (.xlsx)
 
 Department- not exist for masters
+
+[Mapping]
+- school/college: 
+- programs: 
