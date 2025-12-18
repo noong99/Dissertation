@@ -32,7 +32,7 @@ diversified, and transformed across generations of graduate students.
 
 ## Project Structure
 
-\text{
+```text
 Final/
 ├── Dataset/
 │   ├── Dissertation-report-Aug042025_all_plusStatusCollections_*.xlsx
@@ -59,7 +59,7 @@ Final/
 │   │
 │   └── Analysis Figures/
 │       → Generated figures used in analysis and reporting
-}
+```
 
 ## Analysis Workflow
 
@@ -87,8 +87,6 @@ Running the notebooks sequentially reproduces the full workflow.
 Python scripts mirror notebook logic for batch execution if needed.
 
 
-RQ1
-Use .... variables for data analysis.
 
 kmeans_bert_data: Rackham_dissertation_metadata_kmeans.csv (.xlsx), doctoral_programs_unique.csv, master_programs_unique.csv
 kmeans_bert_data_mapping: Rackham_dissertation_metadata_kmeans_mapping.csv (.xlsx)
