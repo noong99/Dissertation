@@ -11,6 +11,7 @@ By aligning inconsistent historical discipline labels with modern program struct
 provides a more coherent view of how the university’s scholarly landscape has expanded,
 diversified, and transformed across generations of graduate students.
 
+
 ## Data Sources
 - **Dissertation-report-Aug042025_all_plusStatusCollections_forProject.xlsx** 
   Primary dataset containing 53,048 dissertation and master’s thesis records (1909–2025),
@@ -28,8 +29,10 @@ diversified, and transformed across generations of graduate students.
   Supplemental reference dataset providing campus IDs (campusid), employee IDs (emplid),
   and uniqnames, used to improve identifier completeness and resolve ambiguous author records.
 
+
 ## Project Structure
 
+\text{
 Final/
 ├── Dataset/
 │   ├── Dissertation-report-Aug042025_all_plusStatusCollections_*.xlsx
@@ -37,13 +40,13 @@ Final/
 │   └── Rackham_Program_List_(Oct_2025).xlsx
 │
 ├── Programs_Department_College/
-│   ├── 1_kmeans_data.ipynb / .py
+│   ├── 1_kmeans_data.ipynb / 1_kmeans_data.py
 │   │   → Text preprocessing and embedding generation for program names
 │   │
-│   ├── 2_kmeans_data_mapping.ipynb / .py
+│   ├── 2_kmeans_data_mapping.ipynb / 2_kmeans_data_mapping.py
 │   │   → KMeans clustering and program mapping
 │   │
-│   ├── 3_data_analysis.ipynb / .py
+│   ├── 3_data_analysis.ipynb / 3_data_analysis.py
 │   │   → Downstream analysis and visualization
 │   │
 │   ├── doctoral_programs_unique.csv
@@ -56,7 +59,32 @@ Final/
 │   │
 │   └── Analysis Figures/
 │       → Generated figures used in analysis and reporting
+}
 
+## Analysis Workflow
+
+1. Extract and preprocess program names from dissertation metadata and Rackham website.
+2. Generate embeddings and apply KMeans clustering to identify similar programs
+3. Apply rule-based normalization and manually resolve ambiguous cases
+4. Merge mapped program information back into the dissertation dataset
+5. Conduct downstream analysis and visualization
+
+
+## Program Mapping Strategy
+
+Program names were harmonized using a hybrid approach.
+Rule-based normalization and embedding-based clustering were applied first,
+and only ambiguously named cases were manually mapped.
+Because minor naming differences across sources made it difficult to define
+a single canonical standard, original program names were retained where appropriate,
+and only supplementary fields were manually mapped.
+
+
+## Reproducibility
+
+The analysis notebooks are numbered in execution order.
+Running the notebooks sequentially reproduces the full workflow.
+Python scripts mirror notebook logic for batch execution if needed.
 
 
 RQ1
