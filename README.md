@@ -68,7 +68,7 @@ Final/
    Long-term trends are analyzed and visualized by degree level, school/college, department (Doctoral only), program, and dissertation title content.
 
 ## Notebook Descriptions
-### 1. `1_kmeans_data.ipynb` / `1_kmeans_data.py`  
+#### 1. `1_kmeans_data.ipynb` / `1_kmeans_data.py`  
 **Metadata preprocessing and initial program mapping**
 
 This notebook performs the core preprocessing and automated program-mapping steps.
@@ -97,7 +97,7 @@ This notebook performs the core preprocessing and automated program-mapping step
 
 ---
 
-### 2. `2_kmeans_data_mapping.ipynb` / `2_kmeans_data_mapping.py`  
+#### 2. `2_kmeans_data_mapping.ipynb` / `2_kmeans_data_mapping.py`  
 **Manual refinement and standardization**
 
 This notebook refines the automated mapping results to improve consistency across sources.
@@ -115,7 +115,7 @@ This notebook refines the automated mapping results to improve consistency acros
 
 ---
 
-### 3. `3_data_analysis.ipynb` / `3_data_analysis.py`  
+#### 3. `3_data_analysis.ipynb` / `3_data_analysis.py`  
 **Trend analysis and topic modeling**
 
 This notebook conducts the main analytical tasks and generates figures and tables.
