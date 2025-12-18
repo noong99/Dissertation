@@ -1,3 +1,5 @@
+# Rackham Dissertation Program Mapping and Analysis
+
 ## Project Overview
 
 This project is part of the Deep Blue Dissertation Research Project, a collaborative initiative with
@@ -41,58 +43,104 @@ Final/
 │
 ├── Programs_Department_College/
 │   ├── 1_kmeans_data.ipynb / 1_kmeans_data.py
-│   │   → Text preprocessing and embedding generation for program names
-│   │
 │   ├── 2_kmeans_data_mapping.ipynb / 2_kmeans_data_mapping.py
-│   │   → KMeans clustering and program mapping
-│   │
 │   ├── 3_data_analysis.ipynb / 3_data_analysis.py
-│   │   → Downstream analysis and visualization
 │   │
 │   ├── doctoral_programs_unique.csv
 │   ├── master_programs_unique.csv
-│   │   → Unique program name lists by degree level
-│   │
-│   ├── Rackham_dissertation_metadata_kmeans.csv
-│   ├── Rackham_dissertation_metadata_kmeans_mapping.csv
-│   │   → Output datasets with cluster labels and mapped metadata
+│   │ 
+│   ├── Rackham_dissertation_metadata_kmeans.csv / Rackham_dissertation_metadata_kmeans.xlsx
+│   ├── Rackham_dissertation_metadata_kmeans_mapping.csv / Rackham_dissertation_metadata_kmeans_mapping.xslx
 │   │
 │   └── Analysis Figures/
-│       → Generated figures used in analysis and reporting
+│       → Generated figures used in analysis
 ```
 
 ## Analysis Workflow
 
-1. Extract and preprocess program names from dissertation metadata and Rackham website.
-2. Generate embeddings and apply KMeans clustering to identify similar programs
-3. Apply rule-based normalization and manually resolve ambiguous cases
-4. Merge mapped program information back into the dissertation dataset
-5. Conduct downstream analysis and visualization
+1. Metadata preprocessing and degree classification
+  Dissertation records are cleaned and classified into Doctoral or Master categories based on degree name patterns.
+2. Program mapping and standardization
+  Discipline labels are aligned with official Rackham program lists using a hybrid approach combining exact matching, Sentence-BERT semantic similarity, and KMeans clustering as a fallback.
+3. Manual refinement
+  Remaining inconsistencies in program and school/college names are manually resolved, and abbreviations are expanded to full names for clarity.
+4. Downstream analysis and visualization
+   Long-term trends are analyzed and visualized by degree level, school/college, department (Doctoral only), program, and dissertation title content.
 
+## Notebook Descriptions
+### 1. `1_kmeans_data.ipynb` / `1_kmeans_data.py`  
+**Metadata preprocessing and initial program mapping**
 
-## Program Mapping Strategy
+This notebook performs the core preprocessing and automated program-mapping steps.
 
-Program names were harmonized using a hybrid approach.
-Rule-based normalization and embedding-based clustering were applied first,
-and only ambiguously named cases were manually mapped.
-Because minor naming differences across sources made it difficult to define
-a single canonical standard, original program names were retained where appropriate,
-and only supplementary fields were manually mapped.
+- Loads raw dissertation and master’s thesis metadata from Deep Blue
+- Cleans and normalizes degree names and discipline labels
+- Classifies records into **Doctoral** and **Master** degree types using rule-based patterns
+- Applies a hybrid program-mapping pipeline:
+  - Exact string matching against official Rackham program lists
+  - Sentence-BERT semantic similarity matching
+  - KMeans clustering as a fallback for noisy or ambiguous labels
+- Uses:
+  - *Rackham Program List (Oct. 2025)* as the ground truth for Doctoral programs
+  - *Rackham Programs of Study* website as the reference for Master’s programs
+
+**Outputs**
+- `Rackham_dissertation_metadata_kmeans.csv` / `.xlsx`  
+  → Dissertation metadata with assigned program, school/college, and (for Doctoral only) department
+- `doctoral_programs_unique.csv`  
+  → Unique Doctoral program–school–department combinations
+- `master_programs_unique.csv`  
+  → Unique Master’s program–school combinations
+
+> **Note:** Department-level information is not available for Master’s programs in the Rackham
+> Programs of Study data and is therefore not included at this stage.
+
+---
+
+### 2. `2_kmeans_data_mapping.ipynb` / `2_kmeans_data_mapping.py`  
+**Manual refinement and standardization**
+
+This notebook refines the automated mapping results to improve consistency across sources.
+
+- Manually resolves remaining inconsistencies in:
+  - School/college names
+  - Program labels
+- Expands abbreviations to their full names for clarity
+- Aligns naming conventions between Doctoral and Master’s data sources
+- Retains original program names when a definitive canonical standard cannot be established
+
+**Outputs**
+- `Rackham_dissertation_metadata_kmeans_mapping.csv` / `.xlsx`  
+  → Final standardized dataset used for downstream analysis
+
+---
+
+### 3. `3_data_analysis.ipynb` / `3_data_analysis.py`  
+**Trend analysis and topic modeling**
+
+This notebook conducts the main analytical tasks and generates figures and tables.
+
+- Analyzes long-term trends by:
+  - Degree level (Doctoral vs Master)
+  - School/college
+  - Department (Doctoral only)
+  - Program
+- Produces time-series visualizations and summary tables
+- Includes **title-based analyses**, such as:
+  - Keyword frequency analysis
+  - TF-IDF–based topic modeling
+  - LDA topic extraction by decade
+  - Sentence-BERT–based semantic clustering of dissertation titles
+- Excludes 2025–2026 data in selected analyses to avoid bias from embargo-related incompleteness
+
+**Outputs**
+- Figures and tables saved in `Analysis Figures/`
+- Results used in the final blog post and reporting
 
 
 ## Reproducibility
 
 The analysis notebooks are numbered in execution order.
-Running the notebooks sequentially reproduces the full workflow.
+Running the notebooks sequentially reproduces the full preprocessing, mapping, and analysis workflow.
 Python scripts mirror notebook logic for batch execution if needed.
 
-
-
-kmeans_bert_data: Rackham_dissertation_metadata_kmeans.csv (.xlsx), doctoral_programs_unique.csv, master_programs_unique.csv
-kmeans_bert_data_mapping: Rackham_dissertation_metadata_kmeans_mapping.csv (.xlsx)
-
-Department- not exist for masters
-
-[Mapping]
-- school/college: 
-- programs: 
