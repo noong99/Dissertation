@@ -37,7 +37,7 @@ diversified, and transformed across generations of graduate students.
 ```text
 Final/
 ├── Dataset/
-│   ├── Dissertation-report-Aug042025_all_plusStatusCollections_*.xlsx
+│   ├── Dissertation-report-Aug042025_all_plusStatusCollections_forProject.xlsx
 │   ├── DissMatchedExport.xlsx
 │   └── Rackham_Program_List_(Oct_2025).xlsx
 │
@@ -52,8 +52,27 @@ Final/
 │   ├── Rackham_dissertation_metadata_kmeans.csv / Rackham_dissertation_metadata_kmeans.xlsx
 │   ├── Rackham_dissertation_metadata_kmeans_mapping.csv / Rackham_dissertation_metadata_kmeans_mapping.xslx
 │   │
-│   └── Analysis Figures/
-│       → Generated figures used in analysis
+│   ├── Analysis Figures/
+│   │   → Generated figures used in analysis
+│   │
+│   └── Text_Analysis_Results/
+│       ├── lda_topics_by_decade_tfidf_lda.csv
+│       │   → Topic keywords by decade (TF-IDF + LDA)
+│       ├── title_semantic_clusters_by_decade_bert_kmeans.csv
+│       │   → Semantic title clusters by decade (Sentence-BERT + KMeans)
+│       ├── title_top_words_by_decade_countvectorizer.csv
+│       │   → Top title keywords by decade (CountVectorizer baseline)
+│       ├── title_top_words_by_decade_spacy_tfidf.csv
+│       │   → Top lemmatized title keywords by decade (SpaCy + TF-IDF)
+│       ├── title_top_words_by_department_countvectorizer.csv
+│       ├── title_top_words_by_department_and_decade_countvectorizer.csv
+│       ├── title_top_words_by_program_countvectorizer.csv
+│       ├── title_top_words_by_program_and_decade_countvectorizer.csv
+│       ├── title_top_words_by_school_college_countvectorizer.csv
+│       └── title_top_words_by_school_college_and_decade_countvectorizer.csv
+│
+└── README.md
+    → Project overview, methodology, and file descriptions
 ```
 
 ## Analysis Workflow
