@@ -23,7 +23,7 @@ diversified, and transformed across generations of graduate students.
   Official Rackham reference list of doctoral programs and discipline labels, used to validate and
   standardize doctoral program mappings.
 
-- **Rackham Programs of Study website**  
+- **Rackham Programs of Study website**
   Rackham’s official listing of 241 graduate programs, used as the canonical reference for
   mapping master’s-level programs.
   
