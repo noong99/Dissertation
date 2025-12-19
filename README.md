@@ -72,11 +72,17 @@ Final/
 │       ├── title_top_words_by_decade_spacy_tfidf.csv
 │       │   → Top lemmatized title keywords by decade (SpaCy + TF-IDF)
 │       ├── title_top_words_by_department_countvectorizer.csv
+│       │   → Top title keywords aggregated by department (CountVectorizer baseline)
 │       ├── title_top_words_by_department_and_decade_countvectorizer.csv
-│       ├── title_top_words_by_program_countvectorizer.csv
+│       │   → Top title keywords grouped jointly by department and decade (CountVectorizer baseline)
+│       ├── title_top_words_by_program_countvectorizer.csv 
+│       │   → Top title keywords aggregated by academic program (CountVectorizer baseline)
 │       ├── title_top_words_by_program_and_decade_countvectorizer.csv
+│       │   → Top title keywords grouped by program and decade (CountVectorizer baseline)
 │       ├── title_top_words_by_school_college_countvectorizer.csv
-│       └── title_top_words_by_school_college_and_decade_countvectorizer.csv
+│       │   → Top title keywords aggregated by school or college (CountVectorizer baseline)
+│       ├── title_top_words_by_school_college_and_decade_countvectorizer.csv
+│       └── → Top title keywords grouped by school or college and decade (CountVectorizer baseline)
 │
 └── README.md
     → Project overview, methodology, and file descriptions
