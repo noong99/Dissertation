@@ -31,6 +31,9 @@ diversified, and transformed across generations of graduate students.
   Supplemental reference dataset providing campus IDs (campusid), employee IDs (emplid),
   and uniqnames, used to improve identifier completeness and resolve ambiguous author records.
 
+- **Dissertation_research_subset.xslx**
+  A curated subset of the primary dissertation metadata file, filtered and cleaned for research analysis. Includes only variables relevant to the research questions, excludes zero-coverage fields, and standardizes column naming (pdf_filename → filename).
+
 
 ## Project Structure
 
