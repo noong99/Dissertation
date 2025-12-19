@@ -1,4 +1,4 @@
-# Rackham Dissertation Metadata Analysis: Programs, Authors, and Faculty Roles
+# Rackham Dissertation Metadata Analysis: Authors, and Faculty Roles
 
 ## Project Overview
 
