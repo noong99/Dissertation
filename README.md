@@ -19,7 +19,7 @@ diversified, and transformed across generations of graduate students.
   Primary dataset containing 53,048 dissertation and master’s thesis records (1909–2025),
   including degree information, discipline labels, authorship metadata, and publication years.
 
-- **Rackham_Program_List_(Oct_2025).xlsx**
+- **Rackham_Program_List_(Oct_2025).xlsx** 
   Official Rackham reference list of doctoral programs and discipline labels, used to validate and
   standardize doctoral program mappings.
 
@@ -27,11 +27,11 @@ diversified, and transformed across generations of graduate students.
   Rackham’s official listing of 241 graduate programs, used as the canonical reference for
   mapping master’s-level programs.
   
-- **DissMatchedExport.xlsx**  
+- **DissMatchedExport.xlsx** 
   Supplemental reference dataset providing campus IDs (campusid), employee IDs (emplid),
   and uniqnames, used to improve identifier completeness and resolve ambiguous author records.
 
-- **Dissertation_research_subset.xslx**
+- **Dissertation_research_subset.xlsx** 
   A curated subset of the primary dissertation metadata file, filtered and cleaned for research analysis. Includes only variables relevant to the research questions, excludes zero-coverage fields, and standardizes column naming (pdf_filename → filename).
 
 
@@ -42,7 +42,8 @@ Final/
 ├── Dataset/
 │   ├── Dissertation-report-Aug042025_all_plusStatusCollections_forProject.xlsx
 │   ├── DissMatchedExport.xlsx
-│   └── Rackham_Program_List_(Oct_2025).xlsx
+│   ├── Rackham_Program_List_(Oct_2025).xlsx
+│   └── Dissertation_research_subset.xlsx
 │
 ├── Programs_Department_College/
 │   ├── 1_kmeans_data.ipynb / 1_kmeans_data.py
