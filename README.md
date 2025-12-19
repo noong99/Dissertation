@@ -57,6 +57,8 @@ Final/
 │   │
 │   └── Text_Analysis_Results/
 │       ├── lda_topics_by_decade_tfidf_lda.csv
+│       ├── lda_topics_by_decade_tfidf_lda_with_weights.csv
+│       ├── lda_strong_topics_avg_weight_ge_0.2.csv
 │       │   → Topic keywords by decade (TF-IDF + LDA)
 │       ├── title_semantic_clusters_by_decade_bert_kmeans.csv
 │       │   → Semantic title clusters by decade (Sentence-BERT + KMeans)
